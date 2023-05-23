@@ -48,13 +48,15 @@ function Header() {
         firebase.auth().signOut();
         history.push('/login')
        }}>LOGOUT</span>}
+<Link to='/create'>
         <div className="sellMenu">
           <SellButton></SellButton>
           <div className="sellMenuContent">
             <SellButtonPlus></SellButtonPlus>
             <span>SELL</span>
           </div>
-        </div>
+        </div></Link>
+
       </div>
     </div>
   );

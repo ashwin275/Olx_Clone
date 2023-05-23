@@ -33,7 +33,7 @@
 
 .card {
   margin-right: 15px;
-  padding: 13px;
+  padding: 12px;
   max-width: 222px;
   width: 222px;
   height: 270px;
@@ -75,6 +75,8 @@
   display: flex;
   justify-content: flex-end;
   font-size: small;
+  
+
 }
 
 .recommendations {

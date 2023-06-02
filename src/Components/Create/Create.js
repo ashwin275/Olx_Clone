@@ -1,8 +1,9 @@
-import React, { Fragment ,useContext,useState} from 'react';
+import React, { Fragment ,useContext,useEffect,useState} from 'react';
 import './Create.css';
 import Header from '../Header/Header';
 import {FirebaseContext,AuthContext} from '../../store/Context'
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+
 
 const Create = () => {
 const history = useHistory()
@@ -13,6 +14,14 @@ const [ price,setPrice] =  useState('')
 const [ category,setCategory] =  useState('')
 const [image,setImage] = useState(null)
 const date = new Date()
+
+useEffect(()=>{
+  if (!user){
+    history.push('/login')
+  }
+})
+
+
 const handleSubmit=()=>{
       firebase.storage().ref(`/image/${image.name}`).put(image).then(({ref})=>{
            ref.getDownloadURL().then((url)=>{
